@@ -4,8 +4,8 @@ $(document).ready(function() {
 
 	$(window).on('action:ajaxify.end', function(ev, data) {
 		if (app.template === 'category' && app.user.uid) {
-			var unsubscribeHtml = '<button type="button" class="btn btn-default btn-warning unsubscribe"><i class="fa fa-pencil"></i>[[category:unsubscribe]]</button>';
-			var subscribeHtml = '<button type="button" class="btn btn-default btn-success subscribe"><i class="fa fa-pencil"></i>[[category:subscribe]]</button>';
+			var unsubscribeHtml = '<button type="button" class="btn btn-default btn-warning unsubscribe"><i class="fa fa-pencil"></i>取消订阅</button>';
+			var subscribeHtml = '<button type="button" class="btn btn-default btn-success subscribe"><i class="fa fa-pencil"></i>订阅</button>';
 
 			var cid = ajaxify.data.cid;
 			socket.emit('plugins.categoryNotifications.isSubscribed', {cid: cid}, function(err, isSubscribed) {
